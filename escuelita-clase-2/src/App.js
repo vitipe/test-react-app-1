@@ -14,3 +14,11 @@ function App() {
 }
 
 export default App;
+
+/*
+Al clickear en "Agregar" tendría que pushear el texto a un array o un objeto.
+Luego, hacemos que por cada elemento de ese array que cree un componente con ese elemento.
+Al apretar "Realizado" o "Hecho" borrar ese elemento (capaz con un ID?) y volver a representar los elementos.
+
+
+*/

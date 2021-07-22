@@ -5,6 +5,7 @@ export default function InputUsuario(props) {
     <input 
       placeholder={props.placeholder}
       type={props.type}
+      onChange={props.onChange}
     />
   )
 }
