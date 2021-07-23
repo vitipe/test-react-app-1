@@ -35,3 +35,7 @@
     transform: rotate(360deg);
   }
 }
+
+i {
+  color: rgb(194, 74, 74);
+}

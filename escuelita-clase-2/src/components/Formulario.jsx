@@ -10,7 +10,7 @@ export default function Formulario(props) {
   
   function manejarClick(e) {
     e.preventDefault();
-    value === undefined  ?  arrayTareas.push('Ingrese una tarea') : arrayTareas.push(value)
+    value === undefined  ?  alert("Ingrese algún producto") : arrayTareas.push(value)
     console.log(arrayTareas)
     setValue('')
     return arrayTareas;
@@ -21,7 +21,7 @@ export default function Formulario(props) {
       <form>
         <InputUsuario 
           type="text" 
-          placeholder="Ingrese tarea"
+          placeholder="Ingrese producto"
           onChange={(event) => setValue(event.target.value)}
         />
         <Boton type='button' texto="Agregar" onClick={manejarClick}/>
