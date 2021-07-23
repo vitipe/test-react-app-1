@@ -3,14 +3,16 @@ import InputUsuario from './InputUsuario';
 import Boton from './Boton';
 import ListaDeTareas from './ListaDeTareas';
 
+let arrayTareas = [];
+
 export default function Formulario(props) {
   const [value, setValue] = React.useState()
-  let arrayTareas = [];
   
   function manejarClick(e) {
     e.preventDefault();
     value === undefined  ?  arrayTareas.push('Ingrese una tarea') : arrayTareas.push(value)
     console.log(arrayTareas)
+    setValue('')
     return arrayTareas;
   }
 
