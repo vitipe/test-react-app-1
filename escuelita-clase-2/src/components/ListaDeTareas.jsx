@@ -4,8 +4,6 @@ import Boton from './Boton';
 
 
 export default function ListaDeTareas(props) {
-  console.log(props.tareas)
-  
   let borrarElemento = (e) => {
     e.target.parentNode.remove()
   }

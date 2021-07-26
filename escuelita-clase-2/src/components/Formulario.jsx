@@ -10,8 +10,15 @@ export default function Formulario(props) {
   
   function manejarClick(e) {
     e.preventDefault();
-    value === undefined  ?  alert("Ingrese algún producto") : arrayTareas.push(value)
-    console.log(arrayTareas)
+
+    if (value === undefined){
+      alert("Ingrese algún producto")
+    } else if (value === '') {
+      alert("Ingrese algún producto")
+    } else {
+      arrayTareas.push(value)
+    }
+    
     setValue('')
     return arrayTareas;
   }
