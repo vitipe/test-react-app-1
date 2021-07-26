@@ -6,16 +6,16 @@ import Boton from './Boton';
 export default function ListaDeTareas(props) {
   console.log(props.tareas)
   
-  let borrarElemento = (myDiv) => {
-    myDiv.current.remove();
+  let borrarElemento = (e) => {
+    e.target.parentNode.remove()
   }
 
   const myDiv = React.createRef();
 
   const tareas = props.tareas;
   const listaDeTareas = tareas.map((tarea, i) =>
-    <div key={i} id={i} ref={myDiv}>
-      <li>{tarea}<Boton type='button' texto='Borrar' onClick={borrarElemento}/></li>
+    <div key={i} id={i} ref={myDiv} >
+      <li >{tarea}<Boton type='button' texto='Borrar'id={"boton" + i} onClick={borrarElemento}/></li>
     </div>
   );
 
