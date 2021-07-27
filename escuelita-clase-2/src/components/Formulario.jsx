@@ -18,7 +18,7 @@ export default function Formulario(props) {
     } else {
       arrayTareas.push(value)
     }
-    
+
     setValue('')
     return arrayTareas;
   }
@@ -32,7 +32,7 @@ export default function Formulario(props) {
           onChange={(event) => setValue(event.target.value)}
         />
         <Boton type='button' texto="Agregar" onClick={manejarClick}/>
-        <ListaDeTareas tareas={arrayTareas}/>
+        <ListaDeTareas arrayTareas={arrayTareas}/>
       </form>
     </div>
   )
