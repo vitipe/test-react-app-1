@@ -1,39 +1,35 @@
 import React from 'react';
 import InputUsuario from './InputUsuario';
 import Boton from './Boton';
-import ListaDeTareas from './ListaDeTareas';
 
-let arrayTareas = [];
-
-export default function Formulario(props) {
-  const [value, setValue] = React.useState()
+const Formulario = ({ setInputText, inputText, todos, setTodos }) => {
   
-  function manejarClick(e) {
+  const inputTextHandler = (e) => {
+    setInputText(e.target.value);
+  }
+
+  const submitTodoHandler = (e) => {
     e.preventDefault();
-
-    if (value === undefined){
-      alert("Ingrese algún producto")
-    } else if (value === '') {
-      alert("Ingrese algún producto")
-    } else {
-      arrayTareas.push(value)
-    }
-
-    setValue('')
-    return arrayTareas;
+    setTodos([
+      ...todos, {text: inputText, completed: false, id: Math.random() * 1000},
+    ]);
+    setInputText('');
   }
 
   return(
     <div>
       <form>
         <InputUsuario 
+          value={inputText}
           type="text" 
           placeholder="Ingrese producto"
-          onChange={(event) => setValue(event.target.value)}
+          onChange={inputTextHandler}
         />
-        <Boton type='button' texto="Agregar" onClick={manejarClick}/>
-        <ListaDeTareas arrayTareas={arrayTareas}/>
+        <Boton type='submit' className="todo-button" texto="Agregar" onClick={submitTodoHandler}/>
+        {/* <ListaDeTareas arrayTareas={arrayTareas}/> */}
       </form>
     </div>
   )
 }
+
+export default Formulario;

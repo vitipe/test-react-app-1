@@ -1,13 +1,19 @@
+import React from 'react';
 import './App.css';
 import Titulo from './components/Title.jsx';
 import Formulario from './components/Formulario';
+import TodoList from './components/TodoList';
 
 function App() {
+  const [inputText, setInputText] = React.useState('');
+  const [todos, setTodos] = React.useState([])
+  
   return (
     <div className="App">
       <header className="App-header">
         <Titulo name="Victor" />
-        <Formulario/>
+        <Formulario todos={todos} setTodos={setTodos} inputText={inputText} setInputText={setInputText}/>
+        <TodoList setTodos={setTodos} todos={todos}></TodoList>
       </header>
     </div>
   );
